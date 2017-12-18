@@ -5,7 +5,6 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
-using Windows.Storage;
 using Windows.UI;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -16,10 +15,9 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using Windows.UI.Xaml.Shapes;
 
-
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
-namespace app3
+namespace Shapes
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
@@ -30,7 +28,7 @@ namespace app3
         int _rows;
         int _height = 80;
         int _width = 80;
-      
+
         public MainPage()
         {
             this.InitializeComponent();
@@ -44,7 +42,7 @@ namespace app3
             _rows = Convert.ToInt32(current.Tag);
             createGrid();
             setupTheCircle();
-            createRectangle(); 
+            createRectangle();
         }
         #region Circle/Ellipse
         private void setupTheCircle()
@@ -57,7 +55,7 @@ namespace app3
         {
 
             el1.Height = 40;
-            el1.Width = 40; 
+            el1.Width = 40;
             Color[] circleColors =
             {Colors.Red, Colors.Yellow, Colors.Pink,
              Colors.Green, Colors.Orange, Colors.Purple, Colors.Blue};
@@ -139,7 +137,7 @@ namespace app3
                     #endregion
                 } // end iC
             } // end of iR
-   
+
         }//end of create grid
 
         #region Rectangle 
@@ -152,34 +150,35 @@ namespace app3
         {
             int i;
             Random random = new Random();
-            i = random.Next(1,4);
+            i = random.Next(1, 4);
             //if statements to determine what the rectangle looks like
             if (i == 1)
-                {
-                    rect1.Fill = new SolidColorBrush(Colors.Black);
-                    rect1.Stroke = new SolidColorBrush(Colors.Yellow);
-                    rect1.StrokeThickness = 3;
-                    rect1.RadiusX = 50;
-                    rect1.RadiusY = 10;
-                }
-            else if(i ==2 )
+            {
+                rect1.Fill = new SolidColorBrush(Colors.Black);
+                rect1.Stroke = new SolidColorBrush(Colors.Yellow);
+                rect1.StrokeThickness = 3;
+                rect1.RadiusX = 50;
+                rect1.RadiusY = 10;
+            }
+            else if (i == 2)
             {
                 rect1.Fill = new SolidColorBrush(Colors.Gold);
                 rect1.Stroke = new SolidColorBrush(Colors.Black);
                 rect1.StrokeThickness = 2;
             }
-            else if (i == 3 )
+            else if (i == 3)
             {
                 rect1.Fill = new SolidColorBrush(Colors.Cyan);
                 rect1.Stroke = new SolidColorBrush(Colors.Coral);
-                rect1.StrokeThickness = 4; 
+                rect1.StrokeThickness = 4;
             }
             else
             {
-           
+
             }
         }
         #endregion
     }
 
 }
+
