@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using Windows.ApplicationModel.Background;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI;
@@ -178,6 +180,16 @@ namespace Shapes
             }
         }
         #endregion
+        private void OnCanceled(IBackgroundTaskInstance sender, BackgroundTaskCancellationReason reason)
+        {
+
+
+            //
+            // Indicate that the background task is canceled.
+            //
+
+            Debug.WriteLine("Background " + sender.Task.Name + " Cancel Requested...");
+        }
     }
 
 }
